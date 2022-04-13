@@ -6,22 +6,26 @@ ob_start(); ?>
     <tr>
         <th>Nom</th>
         <th>Nom Officiel</th>
-        <th>Drapeau</th>
         <th>Monnaie</th>
+        <th>Drapeau</th>
         <th>Continent</th>
     </tr>
 
-    <?php error_log(print_r($pays, 1));
-    foreach ($pays as $aPays) : ?>
+    <?php foreach ($pays as $aPays) : ?>
     <tr>
-        <td><?= $aPays->name->official ?></td>
-        <td><?= $aPays->name->common ?></td>
-        <td><img src="<?= $aPays->flags->png ?>" width="100px" alt=""></td>
-        <td><?=var_dump($aPays->currencies)?></td>
-        <td>
-            <a href="continent.php?region=<?= $aPays->region ?>"><?= $aPays->region ?>
+        <?php if ((isset($_GET['region'])) && ($_GET['region']==$aPays->region)) :?>
+        <td><?= $aPays->name->official ?>
         </td>
-
+        <td><?= $aPays->name->common ?></td>
+        <td><?php foreach ($aPays->currencies as $money){
+            if($money->symbol) echo $money->symbol."($money->name)";
+        }?>
+        </td>
+        <td><img src="<?= $aPays->flags->png ?>" width="100px" alt=""></td>
+        <td>
+            <a href="pays.php?region=<?= $aPays->region ?>"><?= $aPays->region ?>
+        </td>
+        <?php endif ?>
     </tr>
     <?php endforeach ?>
 </table>

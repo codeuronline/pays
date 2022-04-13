@@ -13,35 +13,33 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand" href="">PAYSDB</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="pays.php">Pays</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle active" href="" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Continents
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="pays.php?region=Asia">Asie</a></li>
-                            <li><a class="dropdown-item" href="pays?region=Oceania">Océanie</a></li>
-                            <li><a class="dropdown-item" href="pays?region=Europe">Europe</a></li>
-                            <li><a class="dropdown-item" href="pays?region=Americas">Amerique</a></li>
-                            <li><a class="dropdown-item" href="pays?region=Africa">Afrique</a></li>
+                            <li><a class="dropdown-item" href="?region=Asia">Asie</a></li>
+                            <li><a class="dropdown-item" href="?region=Oceania">Océanie</a></li>
+                            <li><a class="dropdown-item" href="?region=Europe">Europe</a></li>
+                            <li><a class="dropdown-item" href="?region=Americas">Amerique</a></li>
+                            <li><a class="dropdown-item" href="?region=Africa">Afrique</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="cards.php">Card</a>
+                    </li>
                 </ul>
-                <form class="d-flex">
+                <form class=" d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
