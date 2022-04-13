@@ -1,6 +1,6 @@
 <?php
+
 $pays = json_decode(file_get_contents("https://restcountries.com/v3.1/all"));
-// if ($_GET && in_array($_GET["region"],$pays)) $pays = array_filter($pays);
 ob_start(); ?>
 <br>
 <div class="container-fluid">
@@ -11,11 +11,15 @@ ob_start(); ?>
             <div class="card" style="width:200px">
                 <img class="card-img-top" src="<?=$aPays->flags->png?>" alt="Card image">
                 <div class="card-body">
-                    <h4 class="card-title"><?= $aPays->name->common ?></h4>
+                    <center>
+                        <h4 class="card-title"><?= $aPays->name->common ?></h4>
+                    </center>
                     <p class="card-text">
-                        <a href="<?=$aPays->maps->googleMaps?>"><i class="bi bi-pin"></i>
+                        <center>
+                            <a href="<?=$aPays->maps->googleMaps?>"><i class="bi bi-pin"></i>
+                            </a><?=number_format($aPays->population,0,'',' ')." habitants";?>
+                        </center>
                     </p>
-                    </a>
                 </div>
             </div>
         </div>
