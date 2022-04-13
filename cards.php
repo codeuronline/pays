@@ -18,20 +18,16 @@ ob_start(); ?>
                 </div>
             </div>
         </div>
-        <?php $count++;
-            echo $count;?>
-
+        <?php $count++;?>
         <?php if($count<5) {
                         echo '<!--fin du col-->';
                      }else{
                     $count=0;
-                    echo '<!--fin col-->
-    </div><!--fin row-->
-    <!--nouvelle row-->
-                        <div class="row">';}
+                    echo '<!--fin col--></div><div class="row">';}
                 ?> <?php endforeach ?>
     </div>
     <!--div du container-->
     <?php
 $content = ob_get_clean();
+$etat="cards";
 require_once("template.php"); ?>

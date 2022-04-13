@@ -9,6 +9,7 @@ ob_start(); ?>
         <th>Monnaie</th>
         <th>Drapeau</th>
         <th>Continent</th>
+        <th>Position</th>
     </tr>
 
     <?php foreach ($pays as $aPays) : ?>
@@ -25,7 +26,9 @@ ob_start(); ?>
         </td>
         <td><img src="<?= $aPays->flags->png ?>" width="100px" alt=""></td>
         <td>
-            <a href="pays.php?region=<?= $aPays->region ?>"><?= $aPays->region ?>
+            <a href="continent.php?region=<?=$aPays->region ?>"><?= $aPays->region ?>
+        </td>
+        <td><i class="bi bi-pin-map"><a href="<?=$aPays->maps->googleMaps?>">&nbsp;&nbsp;</a></i>
         </td>
         <?php endif ?>
 
@@ -35,4 +38,5 @@ ob_start(); ?>
 
 <?php
 $content = ob_get_clean();
+$etat="continent";
 require_once("template.php"); ?>

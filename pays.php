@@ -28,4 +28,5 @@ ob_start(); ?>
 
 <?php
 $content = ob_get_clean();
+$etat="pays";
 require_once("template.php"); ?>
