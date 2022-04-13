@@ -7,11 +7,11 @@ ob_start();?>
         <div class="card border-primary mb-3" style="max-width: 18rem;">
             <div class="card-header">
                 <h3>
-                    Bienvenue sur le site manipulant un JSON
+                    Nombre de Pays
                 </h3>
             </div>
             <div class="card-body" width="300px">
-                <h5 class="card-title">Nombre de Pays</h5>
+                <h5 class="card-title">Data Base de Pays</h5>
                 <p class="card-text"><?=count($content)?></p>
             </div>
         </div>
