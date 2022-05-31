@@ -10,12 +10,23 @@ ob_start(); ?>
         <tr>
             <th>
                 <form onclick="tri();">
-                    <button type='submit'> Nom</button>
+                    <button type='submit'>Nom</button>
+                </form>
             </th>
-            <th>Nom Officiel</th>
+            <th>
+                <form onclick="tri();">
+                    <button type="submit">Nom Officiel</button>
+                </form>
+            </th>
             <th>Drapeau</th>
-            <th>Monnaie(s) et symbole</th>
-            <th>Continent</th>
+            <th>Symbole Monétaire</th>
+
+            <th>
+                <form onclick="tri();">
+                    <button type="submit">Continent </button>
+
+                </form>
+            </th>
         </tr>
 
         <?php error_log(print_r($pays, 1));

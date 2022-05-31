@@ -5,12 +5,19 @@ ob_start(); ?>
 <table class="table">
     <tr>
         <th>
-            <form onclick="tri();">Nom</form>
+            <form onclick="tri();"><button type="submit">Nom</button></form>
         </th>
-        <th>Nom Officiel</th>
-        <th>Monnaie</th>
+        <th>
+            <form onclick="tri();">
+                <button type="submit">Nom Oficiel</button>
+            </form>
+        </th>
+        <th>Symbole Monétaire</th>
         <th>Drapeau</th>
-        <th>Continent</th>
+
+        <th>
+            <button type="submit">Continent </button>
+        </th>
         <th>Position</th>
     </tr>
 
