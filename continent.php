@@ -19,10 +19,11 @@ ob_start(); ?>
         </td>
         <td><?= $aPays->name->common ?></td>
         <td>
-            <?php if (isset($aPays->currencies)){foreach ($aPays->currencies as $money){
-            if($money->symbol) echo $money->symbol."($money->name)";
-        }}
-        ?>
+            <?php if (isset($aPays->currencies)):?>
+            <?php foreach ($aPays->currencies as $money):?>
+            <?php if($money->symbol) :?>
+            <?=$money->symbol."($money->name)";?>
+            <?php endif;endforeach;endif?>
         </td>
         <td><img src="<?= $aPays->flags->png ?>" width="100px" alt=""></td>
         <td>
