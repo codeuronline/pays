@@ -11,7 +11,7 @@ ob_start(); ?>
             <th>Nom</th>
             <th>Nom Officiel</th>
             <th>Drapeau</th>
-            <th>Monnaie</th>
+            <th>Monnaie(s) et symbole</th>
             <th>Continent</th>
         </tr>
 
@@ -21,8 +21,11 @@ ob_start(); ?>
             <td><?= $aPays->name->official ?></td>
             <td><?= $aPays->name->common ?></td>
             <td><img src="<?= $aPays->flags->png ?>" width="100px" alt=""></td>
-            <?php ?>
-            <td><?=(isset($aPays->currencies->symbol))? var_dump($aPays->$currencies->symbol):"Monnaie non définie"?>
+            <td><?php foreach ($aPays->currencies as $money){
+            if($money->symbol) echo $money->symbol."($money->name)";
+        }
+        ?></td>
+            <?php //(isset($aPays->currencies->symbol))? var_dump($aPays->$currencies->symbol):"Monnaie non définie"?>
             </td>
             <td>
                 <a href="continent.php?region=<?= $aPays->region ?>"><?= $aPays->region ?>
