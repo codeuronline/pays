@@ -22,7 +22,7 @@ ob_start(); ?>
             <td><?= $aPays->name->common ?></td>
             <td><img src="<?= $aPays->flags->png ?>" width="100px" alt=""></td>
             <?php ?>
-            <td><?=(isset($aPays->currencies->symbol))? var_dump($aPays->currencies->$symbol):"Monnaie non définie"?>
+            <td><?=(isset($aPays->currencies->symbol))? var_dump($aPays->$currencies->symbol):"Monnaie non définie"?>
             </td>
             <td>
                 <a href="continent.php?region=<?= $aPays->region ?>"><?= $aPays->region ?>
