@@ -21,12 +21,14 @@ ob_start(); ?>
             <td><?= $aPays->name->official ?></td>
             <td><?= $aPays->name->common ?></td>
             <td><img src="<?= $aPays->flags->png ?>" width="100px" alt=""></td>
-            <td><?php foreach ($aPays->currencies as $money){
+            <td><?php if(isset($aPays->currencies)){foreach ($aPays->currencies as $money){
+            
             if($money->symbol) echo $money->symbol."($money->name)";
-        }
-        ?></td>
-            <?php //(isset($aPays->currencies->symbol))? var_dump($aPays->$currencies->symbol):"Monnaie non définie"?>
-            </td>
+        }}
+        ?>
+                <!-- </td> -->
+                <?php //(isset($aPays->currencies->symbol))? var_dump($aPays->$currencies->symbol):"Monnaie non définie"?>
+                <!-- </td> -->
             <td>
                 <a href="continent.php?region=<?= $aPays->region ?>"><?= $aPays->region ?>
             </td>
