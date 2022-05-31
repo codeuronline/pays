@@ -1,6 +1,8 @@
 <?php
 $pays = json_decode(file_get_contents("https://restcountries.com/v3.1/all"));
+
 if ($_GET && in_array($_GET["region"],$pays)) $pays = array_filter($pays);
+
 ob_start(); ?>
 <br>
 <div class="container-fluid border-primary mb-3">
@@ -19,7 +21,9 @@ ob_start(); ?>
             <td><?= $aPays->name->official ?></td>
             <td><?= $aPays->name->common ?></td>
             <td><img src="<?= $aPays->flags->png ?>" width="100px" alt=""></td>
-            <td><?=var_dump($aPays->currencies)?></td>
+            <?php ?>
+            <td><?=(isset($aPays->currencies->symbol))? var_dump($aPays->currencies->$symbol):"Monnaie non définie"?>
+            </td>
             <td>
                 <a href="continent.php?region=<?= $aPays->region ?>"><?= $aPays->region ?>
             </td>
