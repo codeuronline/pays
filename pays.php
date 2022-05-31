@@ -8,7 +8,10 @@ ob_start(); ?>
 <div class="container-fluid border-primary mb-3">
     <table class="table">
         <tr>
-            <th>Nom</th>
+            <th>
+                <form onclick="tri();">
+                    <button type='submit'> Nom</button>
+            </th>
             <th>Nom Officiel</th>
             <th>Drapeau</th>
             <th>Monnaie(s) et symbole</th>

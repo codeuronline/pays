@@ -4,7 +4,9 @@ if ($_GET && in_array($_GET["region"],$pays)) $pays = array_filter($pays);
 ob_start(); ?>
 <table class="table">
     <tr>
-        <th>Nom</th>
+        <th>
+            <form onclick="tri();">Nom</form>
+        </th>
         <th>Nom Officiel</th>
         <th>Monnaie</th>
         <th>Drapeau</th>
@@ -25,11 +27,12 @@ ob_start(); ?>
             <?=$money->symbol."($money->name)";?>
             <?php endif;endforeach;endif?>
         </td>
-        <td><img src="<?= $aPays->flags->png ?>" width="100px" alt=""></td>
+        <td><img src=" <?= $aPays->flags->png ?>" width="100px" alt="">
+        </td>
         <td>
             <a href="continent.php?region=<?=$aPays->region ?>"><?= $aPays->region ?>
         </td>
-        <td><i class="bi bi-pin-map"><a href="<?=$aPays->maps->googleMaps?>">&nbsp;&nbsp;</a></i>
+        <td><a href="<?=$aPays->maps->googleMaps?>"><i class="bi bi-pin-map"></i></a>
         </td>
         <?php endif ?>
 
