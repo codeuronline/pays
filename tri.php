@@ -10,7 +10,7 @@ switch ($id) {
         $pays=array_multisort($pays,SORT_DESC);
         break;
 }
-$pays =array_multisort($pays,SORT_ASC);
+// $pays =array_multisort($pays,SORT_ASC);
 
 $retour_value = json_encode($pays);
 header("Location: pays.php");
