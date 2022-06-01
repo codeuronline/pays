@@ -39,7 +39,7 @@ ob_start(); ?>
         <tr>
             <td><?= $aPays->name->official ?></td>
             <td><?= $aPays->name->common ?></td>
-            <td><img src="<?= $aPays->flags->png ?>" width="100px" alt=""></td>
+            <td><img src="<?= $aPays->flags->{"png"} ?>" width="100px" alt=""></td>
             <td><?php if(isset($aPays->currencies)){foreach ($aPays->currencies as $money){
             
             if($money->symbol) echo $money->symbol."($money->name)";
