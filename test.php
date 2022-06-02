@@ -16,10 +16,11 @@ $pays=  json_decode(file_get_contents("https://restcountries.com/v3.1/all"));
 //var_dump($pays);
 // array_multisort($arr1, array('name'=>SORT_DESC));
 $region  = array_column($pays, 'region');
-$commonname=array_column($pays,'official');
-var_dump($commonname);
-die;
-array_multisort($region,SORT_ASC,$pays);
+
+$official=array_column($pays,'official');
+$common =array_column($pays,'common');
+
+array_multisort($official,SORT_ASC,$pays);
 echo "<br>";
 foreach ($pays as $aPays) {
 var_dump($aPays->name->common);
