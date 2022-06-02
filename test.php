@@ -19,9 +19,11 @@ $arr1 = array(
     array('id'=>3,'name'=>'bb','cat'=>'cc'),
     array('id'=>4,'name'=>'bb','cat'=>'dd')
 );
-var_dump($arr1);
-array_multisort($arr1, array('name'=>SORT_DESC));
-var_dump($arr1);
+var_dump($pays);
+// array_multisort($arr1, array('name'=>SORT_DESC));
+array_multisort($pays->region,SORT_ASC,$pays);
+echo "<br>";
+var_dump($pays);
 
 // var_dump($arr2);
 die;
