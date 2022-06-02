@@ -5,8 +5,7 @@ switch ($id) {
     case 0:
         $pays=array_multisort($pays,SORT_ASC);
         break;
-    
-    default:
+    case 1:
         $pays=array_multisort($pays,SORT_DESC);
         break;
 }
