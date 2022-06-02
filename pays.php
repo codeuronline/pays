@@ -34,12 +34,12 @@ ob_start(); ?>
             </th>
         </tr>
 
-        <?php error_log(print_r($pays, 1));
+        <?php //error_log(print_r($pays, 1));
     foreach ($pays as $aPays) : ?>
         <tr>
             <td><?= $aPays->name->official ?></td>
             <td><?= $aPays->name->common ?></td>
-            <td><img src="<?= $aPays->flags->{"png"} ?>" width="100px" alt=""></td>
+            <td><img src="<?= $aPays->flags->png ?>" width="100px" alt=""></td>
             <td><?php if(isset($aPays->currencies)){foreach ($aPays->currencies as $money){
             
             if($money->symbol) echo $money->symbol."($money->name)";
