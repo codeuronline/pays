@@ -6,10 +6,10 @@ switch ($etat) {
     case "continent":
         switch ($id) {
             case 0:
-                array_multisort($pays, array('name' => SORT_ASC));
+                array_multisort($pays, array('name' => SORT_ASC,"region"=>SORT_DESC));
                 break;
             case 1:
-                array_multisort($pays, array('name' => SORT_DESC));
+                array_multisort($pays, array('name' => SORT_ASC,"region"=>SORT_DESC));
                 break;
         }
     case "pays":

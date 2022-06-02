@@ -35,7 +35,7 @@ ob_start(); ?>
             </th>
         </tr>
 
-        <?php //error_log(print_r($pays, 1));
+        <?php error_log(print_r($pays, 1));
     foreach ($pays as $aPays) : ?>
         <tr>
             <td><?= $aPays->name->official ?></td>
