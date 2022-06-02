@@ -13,21 +13,23 @@ $pays=  json_decode(file_get_contents("https://restcountries.com/v3.1/all"));
 
 <?php 
 
-$arr1 = array(
-    array('id'=>1,'name'=>'aA','cat'=>'cc'),
-    array('id'=>2,'name'=>'aa','cat'=>'dd'),
-    array('id'=>3,'name'=>'bb','cat'=>'cc'),
-    array('id'=>4,'name'=>'bb','cat'=>'dd')
-);
-var_dump($pays);
+//var_dump($pays);
 // array_multisort($arr1, array('name'=>SORT_DESC));
-array_multisort($pays->region,SORT_ASC,$pays);
-echo "<br>";
-var_dump($pays);
-
-// var_dump($arr2);
+$region  = array_column($pays, 'region');
+$commonname=array_column($pays,'official');
+var_dump($commonname);
 die;
-array_multisort($pays, array("region"=>SORT_DESC));?>
+array_multisort($region,SORT_ASC,$pays);
+echo "<br>";
+foreach ($pays as $aPays) {
+var_dump($aPays->name->common);
+};
+//array_multisort($pays->region,SORT_ASC,$pays);
+// var_dump($arr2);
+
+
+die;
+?>
 
 <body>
     <?php foreach ($pays as $aPays) : ?>

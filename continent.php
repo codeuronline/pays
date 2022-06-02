@@ -2,7 +2,7 @@
 if (!@($pays)){
     $pays = json_decode(file_get_contents("https://restcountries.com/v3.1/all"));
 }
-if ($_GET && in_array($_GET["region"],$pays)) $pays = array_values($pays);
+if ($_GET && in_array($_GET["region"],$pays)) $pays = array_filter($pays);
 ob_start(); ?>
 <table class="table">
     <tr>
