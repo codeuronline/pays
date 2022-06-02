@@ -7,10 +7,10 @@ ob_start(); ?>
 <table class="table">
     <tr>
         <th>
-            <form onclick="tri();"><button type="submit">Nom</button></form>
+            <form onclick="tri(0,'continent');"><button type="submit">Nom</button></form>
         </th>
         <th>
-            <form onclick="tri();">
+            <form onclick="tri(1,'continent');">
                 <button type="submit">Nom Oficiel</button>
             </form>
         </th>
