@@ -1,5 +1,5 @@
 function tri(value) {
-    fetch('http://localhost/Projet%20(API%20Pays)/tri.php?=id='+value)
+    fetch('http://localhost/Projet%20(API%20Pays)/tri.php?element=etat=id='+value)
         .then(function (response) {
             console.log(reponse)
             //console.log('http://localhost/Projet%20(API%20Pays)/tri.php?=id=' + value);

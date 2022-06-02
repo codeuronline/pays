@@ -11,15 +11,15 @@ ob_start(); ?>
             <th>
                 <form>
                     Nom
-                    <button onclick=" tri(1)" type='submit'><i class="bi bi-caret-up-fill"></i></button>
-                    <button onclick="tri(0)" type='submit'><i class="bi bi-caret-down-fill"></i></button>
+                    <button onclick=" tri(1,'pays')" type='submit'><i class="bi bi-caret-up-fill"></i></button>
+                    <button onclick="tri(0,'pays')" type='submit'><i class="bi bi-caret-down-fill"></i></button>
                 </form>
             </th>
             <th>
                 <form>
                     Nom Officiel
-                    <button onclick="tri(1)" type='submit'><i class="bi bi-caret-up-fill"></i></button>
-                    <button onclick="tri(0)" type='submit'><i class="bi bi-caret-down-fill"></i></button>
+                    <button onclick="tri(1,'pays')" type='submit'><i class="bi bi-caret-up-fill"></i></button>
+                    <button onclick="tri(0,'pays')" type='submit'><i class="bi bi-caret-down-fill"></i></button>
                 </form>
             </th>
             <th>Drapeau</th>
@@ -27,8 +27,8 @@ ob_start(); ?>
             <th>
                 <form>
                     Continent
-                    <button onclick="tri(1)" type='submit'><i class="bi bi-caret-up-fill"></i></button>
-                    <button onclick="tri(0)" type='submit'><i class="bi bi-caret-down-fill"></i></button>
+                    <button onclick="tri(1,'pays')" type='submit'><i class="bi bi-caret-up-fill"></i></button>
+                    <button onclick="tri(0,'pays')" type='submit'><i class="bi bi-caret-down-fill"></i></button>
 
                 </form>
             </th>
