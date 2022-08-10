@@ -1,6 +1,12 @@
 <?php
-
-$pays = json_decode(file_get_contents("https://restcountries.com/v3.1/all"));
+define("PATH","save/");
+define("URL","http://localhost/Projet%20(API%20Pays)/save/");
+if (!file(PATH."geeks_data.json")){
+    $content=file_put_contents(PATH."geeks_data.json",(file_get_contents("https://restcountries.com/v3.1/all")));
+}else{ 
+    $content=file_get_contents(URL."geeks_data.json");
+}
+$pays = json_decode($content);
 ob_start(); ?>
 <br>
 <div class="container-fluid">

@@ -1,6 +1,13 @@
 <?php
+define("PATH","save/");
+define("URL","http://localhost/Projet%20(API%20Pays)/save/");
+if (!file(PATH."geeks_data.json")){
+    $content=file_put_contents(PATH."geeks_data.json",(file_get_contents("https://restcountries.com/v3.1/all")));
+}else{
+    $content=file_get_contents((URL."geeks_data.json"));
+}
 if (!@($pays)){
-    $pays = json_decode(file_get_contents("https://restcountries.com/v3.1/all"));
+    $pays = json_decode($content);
 }
 if ($_GET && in_array($_GET["region"],$pays)) $pays = array_filter($pays);
 ob_start(); ?>
@@ -32,11 +39,13 @@ ob_start(); ?>
         <td>
             <?php if (isset($aPays->currencies)):?>
             <?php foreach ($aPays->currencies as $money):?>
-            <?php if($money->symbol) :?>
+            <?php if(isset($money->symbol)) :?>
             <?=$money->symbol."($money->name)";?>
+            <?php else :?>
+            <?="Monnaie non renseignée"?>
             <?php endif;endforeach;endif?>
         </td>
-        <td><img src=" <?= $aPays->flags->png ?>" width="100px" alt="">
+        <td><img src="<?= $aPays->flags->png ?>" width="100px" alt="">
         </td>
         <td>
             <a href="continent.php?region=<?=$aPays->region ?>"><?= $aPays->region ?>

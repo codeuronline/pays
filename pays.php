@@ -1,6 +1,13 @@
 <?php
-if (!(@$pays)){
-    $pays = json_decode(file_get_contents("https://restcountries.com/v3.1/all"));
+define("PATH","save/");
+define("URL","http://localhost/Projet%20(API%20Pays)/save/");
+if (!file(PATH."geeks_data.json")){
+    $content=file_put_contents(PATH."geeks_data.json",(file_get_contents("https://restcountries.com/v3.1/all")));
+} else {
+    $content=file_get_contents(URL."geeks_data.json");
+}
+if (!@($pays)){
+    $pays = json_decode($content);
 }
 if ($_GET && in_array($_GET["region"],$pays)) $pays = array_filter($pays);
 
@@ -50,9 +57,8 @@ ob_start(); ?>
                 <?php //(isset($aPays->currencies->symbol))? var_dump($aPays->$currencies->symbol):"Monnaie non définie"?>
                 <!-- </td> -->
             <td>
-                <a href="continent.php?region=<?= $aPays->region ?>"><?= $aPays->region ?>
+                <a href="continent.php?region=<?= $aPays->region ?>"><?= $aPays->region ?></a>
             </td>
-
         </tr>
         <?php endforeach ?>
     </table>

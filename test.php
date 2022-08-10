@@ -16,7 +16,6 @@ $pays=  json_decode(file_get_contents("https://restcountries.com/v3.1/all"));
 //var_dump($pays);
 // array_multisort($arr1, array('name'=>SORT_DESC));
 $region  = array_column($pays, 'region');
-
 $official=array_column($pays,'official');
 $common =array_column($pays,'common');
 
