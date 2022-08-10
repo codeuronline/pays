@@ -19,7 +19,7 @@ ob_start(); ?>
             <th>
                 <form>
                     Nom
-                    <button onclick=" tri(1,'pays')" type='submit'><i class="bi bi-caret-up-fill"></i></button>
+                    <button onclick="tri(1,'pays')" type='submit'><i class="bi bi-caret-up-fill"></i></button>
                     <button onclick="tri(0,'pays')" type='submit'><i class="bi bi-caret-down-fill"></i></button>
                 </form>
             </th>

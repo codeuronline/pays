@@ -1,7 +1,10 @@
 function tri(value,etat) {
-    var url = 'http://localhost/Projet%20(API%20Pays)/tri.php?etat=' + etat + '&=id=' + value;
-    fetch(url)
-    .then(function(response) {
+  var file = 'http://localhost/Projet%20(API%20Pays)/save/geeks_data.json.php';  
+  //var url = 'http://localhost/Projet%20(API%20Pays)/save/geeks_data.json.php?etat=' + etat + '&=id=' + value;
+  
+  fetch(file)
+      .then(function (response) {
+        console.log("response",response);
       return response.json();
     })
     

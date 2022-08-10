@@ -1,7 +1,7 @@
 <?php 
 //definition des constantes
-define("PATH","save/");
-define("URL","http://localhost/Projet%20(API%20Pays)/save/");
+define ("PATH","save/");
+define ("URL","http://localhost/Projet%20(API%20Pays)/save/");
 if (!file(PATH."geeks_data.json")){
     file_put_contents(PATH."geeks_data.json",(file_get_contents("https://restcountries.com/v3.1/all")));
 }else{ 
