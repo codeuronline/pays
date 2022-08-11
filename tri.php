@@ -7,23 +7,24 @@ switch ($etat) {
         switch ($id) {
             case 0:
                 $region = array_column($pays,"region");
-                echo array_multisort($region,SORT_DESC,$pays);
+                var_dump(array_multisort($region,SORT_DESC,$pays));
                 break;
             case 1:
                 $region = array_column($pays,"region");
-                echo array_multisort($region,SORT_ASC,$pays);
+                var_dump(array_multisort($region,SORT_ASC,$pays));
                 break;
         }
     case "pays":
         switch ($id) {
             case 0:
                 $pays_state=array_column($pays,'name');
-                echo array_multisort($pays_state,SORT_DESC,$pays);
+                var_dump(array_multisort($pays_state,SORT_DESC,$pays));
                 //array_multisort($pays, array('name' => SORT_ASC));
                 break;
             case 1:
                 $pays_state=array_column($pays,'name');
-                echo array_multisort($pays_state,SORT_ASC,$pays);
+                var_dump( array_multisort($pays_state,SORT_ASC,$pays));
+                
                 //array_multisort($pays, array('name' => SORT_DESC));
         break;
 

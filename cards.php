@@ -15,7 +15,7 @@ ob_start(); ?>
     foreach ($pays as $aPays) : ?>
         <div class="col">
             <div class="card" style="width:200px">
-                <img class="card-img-top" src="<?=$aPays->flags->png?>" alt="Card image">
+                <img class="card-img-top" style="border-radius: 40px" src=" <?=$aPays->flags->png?>" alt="Card image">
                 <div class="card-body">
                     <center>
                         <h4 class="card-title"><?= $aPays->name->common ?></h4>
